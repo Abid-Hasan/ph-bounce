@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bounce</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #3c2b51;
+      }
+      h1 {
+        color: white;
+        text-align: center;
+        margin-top: 1rem;
+      }
+      .field {
+        height: 500px;
+        width: 500px;
+        background-color: #3c2b51;
+        margin: 2rem auto;
+        position: relative;
+        border-left: 1rem solid cyan;
+        border-bottom: 1rem solid white;
+        border-right: 1rem solid orchid;
+        border-top: 1rem solid yellowgreen;
+      }
+      .ball {
+        height: 100px;
+        width: 100px;
+        background-color: cyan;
+        border-radius: 50%;
+        position: absolute;
+        left: 0%;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: 2s;
+        animation: bounce 2s linear infinite;
+      }
+      hr {
+        color: white;
+        width: 100%;
+        position: absolute;
+      }
+      .horizontal {
+        top: 50%;
+      }
+      .vertical {
+        transform: rotate(90deg);
+        top: 50%;
+      }
+      @keyframes bounce {
+        0% {
+          left: 0%;
+          top: 50%;
+          transform: translate(0%, -50%);
+          background-color: cyan;
+        }
+        24% {
+          background-color: cyan;
+        }
+        25% {
+          left: 50%;
+          top: 100%;
+          transform: translate(-50%, -100%);
+          background-color: white;
+        }
+        49% {
+          background-color: white;
+        }
+        50% {
+          left: 100%;
+          top: 50%;
+          transform: translate(-100%, -50%);
+          background-color: orchid;
+        }
+        74% {
+          background-color: orchid;
+        }
+        75% {
+          left: 50%;
+          top: 0%;
+          transform: translate(-50%, 0%);
+          background-color: yellowgreen;
+        }
+        99% {
+          background-color: yellowgreen;
+        }
+        100% {
+          left: 0%;
+          top: 50%;
+          transform: translate(0%, -50%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bounce</h1>
+    <div class="field">
+      <div class="ball"></div>
+      <!-- <hr class="horizontal" />
+      <hr class="vertical" /> -->
+    </div>
+  </body>
+</html>
